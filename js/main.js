@@ -267,6 +267,16 @@ function scrollanimate(){
 
 
 }
+function mainScrollanimate(){
+	var hei =document.documentElement.scrollTop || document.body.scrollTop;
+	var window_height=document.documentElement.clientHeight + hei;
+	var $an_i=$(".banner");
+
+	if(window_height>=$an_i.offset().top+1200){
+		$(".i-fib .le").animate({"left":"0px","opacity":"1"},1200)
+		$(".i-fib .ri").animate({"left":"0px","opacity":"1"},1500)
+	}
+}
 function jm(){  //产品优势
     var hei =document.documentElement.scrollTop || document.body.scrollTop;
     var window_height=document.documentElement.clientHeight + hei;

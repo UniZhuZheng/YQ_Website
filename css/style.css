@@ -497,8 +497,8 @@ body{
 }
 
 .i-fib .ri dd{
-	width: 250px;
-	height: 345px;
+	width: 300px;
+	height: 320px;
 	float: left;
 	text-align: center;
     cursor:pointer;
@@ -2672,8 +2672,8 @@ body{
     top:215px;
 }
 .bz-bg{
-    width:350px;
-    height:50px;
+    width:480px;
+    height:72px;
     background: url("../image/public/flow_77.png") no-repeat;
     color: black;
     float: right;
