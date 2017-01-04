@@ -502,6 +502,7 @@ body{
 	float: left;
 	text-align: center;
     cursor:pointer;
+	border: 1px solid white;
 }
 .i-fib .ri dd div.mask{
     width: 250px;

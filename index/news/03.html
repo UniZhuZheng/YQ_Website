@@ -1,17 +1,491 @@
 <style>
-	.picness p img{
-		float:none;
-		display:block;
-		margin:0px auto;
+
+
+	.rich_media_meta_list {
+		position: relative;
+		z-index: 1;
 	}
+	.rich_media_content {
+		width: 670px;
+		position: relative;
+	}
+	.profile_container {
+		font-size: 14px;
+		left: 65px;
+		position: absolute;
+		top: 100%;
+		width: 535px;
+	}
+	.profile_inner {
+		background-color: #fff;
+		border: 1px solid #d9dadc;
+		padding: 30px 22px 36px 144px;
+		position: relative;
+	}
+	.profile_arrow_wrp {
+		left: 22px;
+		position: absolute;
+		top: -8px;
+	}
+	.profile_arrow {
+		border-color: transparent transparent #d9dadc;
+		border-style: dashed dashed solid;
+		border-width: 0 8px 8px;
+		display: inline-block;
+		height: 0;
+		position: absolute;
+		top: 0;
+		width: 0;
+	}
+	.profile_arrow.arrow_in {
+		border-bottom-color: #fff;
+		margin-top: 1px;
+	}
+	.profile_avatar {
+		height: 100px !important;
+		left: 24px;
+		position: absolute;
+		top: 24px;
+		width: 100px;
+	}
+	.profile_nickname {
+		font-size: 16px;
+		font-weight: 400;
+	}
+	.profile_meta {
+		margin-top: 5px;
+		overflow: hidden;
+	}
+	.profile_meta_label {
+		float: left;
+		margin-right: 1em;
+		width: 4em;
+	}
+	.profile_meta_value {
+		color: #adadad;
+		display: block;
+		overflow: hidden;
+	}
+	.icon_verify {
+		display: inline-block;
+		height: 16px;
+		line-height: 9em;
+		overflow: hidden;
+		vertical-align: middle;
+		width: 16px;
+	}
+	.icon_verify.success {
+		background: transparent url("//res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/icon/wxverify/icon_verify_success238f07.png") no-repeat scroll 0 0;
+	}
+	.not_in_mm span.rich_media_meta_nickname {
+		display: inline-block;
+	}
+	.not_in_mm a.rich_media_meta_nickname {
+		display: none;
+	}
+	.not_in_mm .rich_media_inner {
+		position: relative;
+	}
+	.not_in_mm .qr_code_pc_outer {
+		color: #717375;
+		display: none !important;
+		left: 0;
+		position: fixed;
+		right: 0;
+		text-align: center;
+		top: 20px;
+	}
+	.not_in_mm .qr_code_pc_inner {
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+		width: 740px;
+	}
+	.not_in_mm .qr_code_pc {
+		background-color: #fff;
+		border: 1px solid #d9dadc;
+		overflow-wrap: break-word;
+		padding: 16px;
+		position: absolute;
+		right: -140px;
+		top: 0;
+		width: 140px;
+		word-break: break-all;
+	}
+	.not_in_mm .qr_code_pc p {
+		font-size: 14px;
+		line-height: 20px;
+	}
+	.not_in_mm .qr_code_pc_img {
+		height: 102px;
+		width: 102px;
+	}
+
+
+	.rich_media_inner {
+		font-size: 16px;
+		hyphens: auto;
+		overflow-wrap: break-word;
+	}
+	.rich_media_area_primary {
+		background-color: #fff;
+		padding: 20px 15px 15px;
+		position: relative;
+	}
+	.rich_media_area_primary::before {
+		border-top: 1px solid #e5e5e5;
+		bottom: -2px;
+		content: " ";
+		height: 1px;
+		left: 0;
+		position: absolute;
+		top: auto;
+		transform: scaleY(0.5);
+		transform-origin: 0 0 0;
+		width: 100%;
+	}
+	.rich_media_area_primary .original_img_wrp {
+		display: inline-block;
+		font-size: 0;
+	}
+	.rich_media_area_primary .original_img_wrp .tips_global {
+		display: block;
+		font-size: 14px;
+		margin-top: 0.5em;
+		overflow: hidden;
+		overflow-wrap: normal;
+		text-align: right;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		width: auto;
+	}
+	.rich_media_area_extra {
+		padding: 0 15px;
+	}
+	.rich_media_title {
+		font-size: 24px;
+		font-weight: 400;
+		line-height: 1.4;
+		margin-bottom: 10px;
+	}
+	.rich_media_meta_list {
+		font-size: 0;
+		line-height: 20px;
+		margin-bottom: 18px;
+	}
+	.rich_media_meta_list em {
+		font-style: normal;
+	}
+	.rich_media_meta {
+		display: inline-block;
+		font-size: 16px;
+		margin-bottom: 10px;
+		margin-right: 8px;
+		vertical-align: middle;
+	}
+	.meta_original_tag {
+		border: 1px solid #9e9e9e;
+		border-radius: 20% / 50%;
+		color: #8c8c8c;
+		display: inline-block;
+		font-size: 15px;
+		line-height: 1.1;
+		padding: 1px 0.5em;
+		vertical-align: middle;
+	}
+	.meta_enterprise_tag img {
+		border: 0 none;
+		display: block;
+		height: 30px !important;
+		margin-top: -3px;
+		position: relative;
+		width: 30px;
+	}
+	.rich_media_meta_text {
+		color: #8c8c8c;
+	}
+	span.rich_media_meta_nickname {
+		display: none;
+	}
+	.rich_media_thumb_wrp {
+		margin-bottom: 6px;
+	}
+	.rich_media_thumb_wrp .original_img_wrp {
+		display: block;
+	}
+	.rich_media_thumb {
+		display: block;
+		width: 100%;
+	}
+	.rich_media_content {
+		color: #3e3e3e;
+		overflow: hidden;
+	}
+	.rich_media_content * {
+		box-sizing: border-box !important;
+		max-width: 100% !important;
+		overflow-wrap: break-word !important;
+	}
+	.rich_media_content p {
+		clear: both;
+		min-height: 1em;
+	}
+	.rich_media_content em {
+		font-style: italic;
+	}
+	.rich_media_content fieldset {
+		min-width: 0;
+	}
+	.rich_media_content .list-paddingleft-2 {
+		padding-left: 30px;
+	}
+	.rich_media_content blockquote {
+		border-left: 3px solid #dbdbdb;
+		margin: 0;
+		padding-left: 10px;
+	}
+	img {
+		height: auto !important;
+	}
+
+
+	.radius_avatar {
+		background-color: #fff;
+		border-radius: 50%;
+		display: inline-block;
+		overflow: hidden;
+		padding: 3px;
+		vertical-align: middle;
+	}
+	.radius_avatar img {
+		background-color: #eee;
+		border-radius: 50%;
+		display: block;
+		height: 100%;
+		width: 100%;
+	}
+	.cell {
+		display: block;
+		padding: 0.8em 0;
+		position: relative;
+	}
+	.cell_hd, .cell_bd, .cell_ft {
+		display: table-cell;
+		overflow-wrap: break-word;
+		vertical-align: middle;
+		white-space: nowrap;
+		word-break: break-all;
+	}
+	.cell_primary {
+		white-space: normal;
+		width: 2000px;
+	}
+	.flex_cell {
+		-moz-box-align: center;
+		align-items: center;
+		display: flex;
+		padding: 10px 0;
+	}
+	.flex_cell_primary {
+		-moz-box-flex: 1;
+		flex: 1 1 0;
+		width: 100%;
+	}
+	.original_tool_area {
+		border: 1px solid #eaeaea;
+		color: #3e3e3e;
+		display: block;
+		margin: 20px 0;
+		padding: 0.75em 1em 0;
+	}
+	.original_tool_area .tips_global {
+		font-size: 15px;
+		padding-bottom: 0.5em;
+		position: relative;
+	}
+	.original_tool_area .tips_global::after {
+		border-bottom: 1px solid #dbdbdb;
+		bottom: 0;
+		content: " ";
+		height: 1px;
+		left: 0;
+		position: absolute;
+		right: 0;
+		transform: scaleY(0.5);
+		transform-origin: 0 100% 0;
+	}
+	.original_tool_area .radius_avatar {
+		height: 27px;
+		margin-right: 0.5em;
+		padding: 0;
+		width: 27px;
+	}
+	.original_tool_area .radius_avatar img {
+		height: 100% !important;
+	}
+	.original_tool_area .flex_cell_bd {
+		overflow: hidden;
+		overflow-wrap: normal;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		width: auto;
+	}
+	.original_tool_area .flex_cell_ft {
+		color: #8c8c8c;
+		font-size: 14px;
+		padding-left: 1em;
+		white-space: nowrap;
+	}
+	.original_tool_area .icon_access::after {
+		border-color: #cbcad0;
+		border-style: solid;
+		border-width: 1px 1px 0 0;
+		content: " ";
+		display: inline-block;
+		height: 8px;
+		position: relative;
+		top: -1px;
+		transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+		width: 8px;
+	}
+	.weui_loading {
+		animation: 1s steps(12, end) 0s normal none infinite running weuiLoading;
+		background: transparent url("data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iciIgd2lkdGg9JzEyMHB4JyBoZWlnaHQ9JzEyMHB4JyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICAgIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSJub25lIiBjbGFzcz0iYmsiPjwvcmVjdD4KICAgIDxyZWN0IHg9JzQ2LjUnIHk9JzQwJyB3aWR0aD0nNycgaGVpZ2h0PScyMCcgcng9JzUnIHJ5PSc1JyBmaWxsPScjRTlFOUU5JwogICAgICAgICAgdHJhbnNmb3JtPSdyb3RhdGUoMCA1MCA1MCkgdHJhbnNsYXRlKDAgLTMwKSc+CiAgICA8L3JlY3Q+CiAgICA8cmVjdCB4PSc0Ni41JyB5PSc0MCcgd2lkdGg9JzcnIGhlaWdodD0nMjAnIHJ4PSc1JyByeT0nNScgZmlsbD0nIzk4OTY5NycKICAgICAgICAgIHRyYW5zZm9ybT0ncm90YXRlKDMwIDUwIDUwKSB0cmFuc2xhdGUoMCAtMzApJz4KICAgICAgICAgICAgICAgICByZXBlYXRDb3VudD0naW5kZWZpbml0ZScvPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyM5Qjk5OUEnCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSg2MCA1MCA1MCkgdHJhbnNsYXRlKDAgLTMwKSc+CiAgICAgICAgICAgICAgICAgcmVwZWF0Q291bnQ9J2luZGVmaW5pdGUnLz4KICAgIDwvcmVjdD4KICAgIDxyZWN0IHg9JzQ2LjUnIHk9JzQwJyB3aWR0aD0nNycgaGVpZ2h0PScyMCcgcng9JzUnIHJ5PSc1JyBmaWxsPScjQTNBMUEyJwogICAgICAgICAgdHJhbnNmb3JtPSdyb3RhdGUoOTAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyNBQkE5QUEnCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSgxMjAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyNCMkIyQjInCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSgxNTAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyNCQUI4QjknCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSgxODAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyNDMkMwQzEnCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSgyMTAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyNDQkNCQ0InCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSgyNDAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyNEMkQyRDInCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSgyNzAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyNEQURBREEnCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSgzMDAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyNFMkUyRTInCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSgzMzAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0Pgo8L3N2Zz4=") no-repeat scroll 0 0 / 100% auto;
+		display: inline-block;
+		height: 20px;
+		vertical-align: middle;
+		width: 20px;
+	}
+
+	.gif_img_wrp {
+		display: inline-block;
+		font-size: 0;
+		font-style: normal;
+		font-weight: 400;
+		position: relative;
+		text-indent: 0;
+	}
+	.gif_img_wrp img {
+		vertical-align: top;
+	}
+	.gif_img_tips {
+		background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0 !important;
+		border-radius: 1.2em / 50%;
+		bottom: 10px;
+		color: #fff;
+		font-size: 11px;
+		left: 10px;
+		line-height: 2.3;
+		min-width: 65px;
+		position: absolute;
+		text-align: center;
+	}
+	.gif_img_tips.loading {
+		min-width: 75px;
+	}
+	.gif_img_tips i {
+		margin: -0.2em 0.73em 0 -2px;
+		vertical-align: middle;
+	}
+	.gif_img_play_arrow {
+		border-color: transparent transparent transparent #fff;
+		border-style: dashed dashed dashed solid;
+		border-width: 5px 0 5px 8px;
+		display: inline-block;
+		height: 0;
+		width: 0;
+	}
+	.gif_img_loading {
+		height: 14px;
+		width: 14px;
+	}
+	i.gif_img_loading {
+		margin-left: -4px;
+	}
+	.gif_bg_tips_wrp {
+		height: 0;
+		line-height: 0;
+		margin: 0;
+		padding: 0;
+		position: relative;
+	}
+	.gif_bg_tips_wrp .gif_img_tips_group {
+		left: 0;
+		position: absolute;
+		top: 0;
+		z-index: 9999;
+	}
+	.gif_bg_tips_wrp .gif_img_tips_group .gif_img_tips {
+		bottom: auto;
+		left: 0;
+		top: 0;
+	}
+	.rich_media_global_msg {
+		background-color: #c6e0f8;
+		color: #8c8c8c;
+		font-size: 13px;
+		left: 0;
+		padding: 1em 35px 1em 15px;
+		position: fixed;
+		right: 0;
+		top: 0;
+		z-index: 1;
+	}
+
+	.rich_media_global_msg .icon_closed:active {
+		background-position: 0 -17px;
+	}
+	.preview_appmsg .rich_media_title {
+		margin-top: 1.9em;
+	}
+	@media screen and (min-width: 1024px) {
+		.rich_media_global_msg {
+			margin: 0 20px;
+			position: relative;
+		}
+		.preview_appmsg .rich_media_title {
+			margin-top: 0;
+		}
+	}
+
 </style>
 <div class="clear-black" ></div>
 <div class="clear-box" style="top:0px;">
 	<div class="showlist list-new picness">
 		<div class="list-listl">
-			<div class="newhome-tit">预售1000盒</div>
-			<span>2016/12/24</span>
-			<p><span style="color:black"><span style="font-family:Calibri"><br/></span></span></p>
+			<div class="newhome-tit">预售1000盒 好礼送不停</div>
+			<span>2016/12/15</span>
+			<div class="rich_media_content " id="js_content">
+				<p><br></p><p><br></p><p><br></p>
+				<p style="text-align: center;">冷冷的冬日<br></p><p style="text-align: center;">您的爱车还好么？</p>
+				<p style="text-align: center;">您朋友的爱车还好么？</p><p style="text-align: center;">让创致节油王来呵护您的车和您的荷包吧！</p>
+				<p style="text-align: center;">创致节油王的预售开始啦！</p><p style="text-align: center;">12月26日统一发货！</p>
+				<p style="text-align: center;">全国包邮！！！</p><p><br></p><p style="text-align: center;">召集首批：创致代言人！</p>
+				<p style="text-align: center;">您准备好了么？！</p><p><br></p><p><br></p>
+				<p><span style="font-size: 20px; color: rgb(216, 79, 169);">福利1</span>：预售期间，成功购买的消费者，有好礼哦！</p><p>美美的车载保温杯！温暖您的胃！
+				<img style="width: 100% ! important; height: auto ! important; visibility: visible ! important;" _width="100%" src="../../image/news_03_01.bmp" data-fail="0"></p><p><br></p><p><span style="font-size: 20px; color: rgb(216, 79, 169);">福利2</span>：预售结束，随机抽取一名消费者，赠送iPhone 7 Plus &nbsp;128G<span style="line-height: 1.6;">！</span></p>
+				<p><img style="width: 100% ! important; height: auto ! important; visibility: visible ! important;" _width="100%" src="../../image/news_03_02.jpg" data-fail="0"><br></p><p><br></p><p style="text-align: center;"><span style="font-size: 24px; color: rgb(216, 79, 169);">节油=省钱</span></p>
+				<p style="text-align: center;"><span style="font-size: 24px; color: rgb(216, 79, 169);">
+					<img style="width: auto ! important; height: auto ! important; visibility: visible ! important;" src="../../image/news_03_03.bmp" data-fail="0"><br></span></p>
+				<p style="text-align: center;"><span style="font-size: 24px; color: rgb(216, 79, 169);"><br></span></p>
+				<p style="text-align: center;"><span style="font-size: 24px; color: rgb(216, 79, 169);">分享=赚钱</span></p>
+				<p style="text-align: center;"><span style="font-size: 24px; color: rgb(216, 79, 169);">
+					<img style="width: 670px ! important; height: 670px ! important;" src="../../image/news_03_04.bmp"><br>购买方式</span></p>
+				<p style="text-align: center;"><span style="font-size: 24px; color: rgb(216, 79, 169);">1，<span style="color: rgb(216, 79, 169); font-size: 18px;">关注"创致爱车"公众号</span></span></p>
+				<p style="text-align: center;"><span style="font-size: 24px; color: rgb(216, 79, 169);">
+					<img style="width: 100% ! important; height: auto ! important;" _width="100%" src="../../image/news_03_05.jpg"><br></span></p>
+				<p style="text-align: center;"><span style="color:#d84fa9"><span style="font-size: 24px; line-height: 38.4px;">2，<span style="line-height: 38.4px; font-size: 18px;">在“创致商城”中购买产品</span></span></span></p>
+				<p style="text-align: center;"><span style="color:#d84fa9"><span style="line-height: 38.4px; font-size: 18px;">
+					<img style="width: 100% ! important; height: auto ! important;" _width="100%" src="../../image/news_03_06.jpg"><br></span></span></p>
+				<p style="text-align: center;"><span style="color:#d84fa9"><span style="line-height: 38.4px; font-size: 18px;"><br></span></span></p>
+				<p style="text-align: center;"><span style="color:#d84fa9"><span style="line-height: 38.4px; font-size: 24px;">分享方式</span></span></p>
+				<p style="text-align: center;"><span style="color:#d84fa9"><span style="line-height: 38.4px; font-size: 24px;">1，<span style="line-height: 38.4px; font-size: 18px;">在“会员中心”获取专属二维码</span></span></span></p><p style="text-align: center;">
+				<span style="color:#d84fa9"><span style="line-height: 38.4px; font-size: 18px;">
+					<img style="width: 100% ! important; height: auto ! important;" _width="100%" src="../../image/news_03_07.jpg"><br>
+					<span style="line-height: 38.4px; font-size: 24px;"><br></span></span></span></p><p style="text-align: center;">
+				<span style="color:#d84fa9"><span style="line-height: 38.4px; font-size: 18px;"><span style="line-height: 38.4px; font-size: 24px;">2</span>，配合“会员中心”中的宣传页面“组成九宫图，分享到朋友圈，就完成啦~！
+					<img style="width: 100% ! important; height: auto ! important;" _width="100%" src="../../image/news_03_08.jpg"><br></span></span></p><p style="text-align: center;"><span style="color:#d84fa9"><span style="line-height: 38.4px; font-size: 18px; color: rgb(0, 128, 255);"><br></span></span></p><p style="text-align: center;"><span style="font-size: 18px; color: rgb(0, 128, 255);">创之路 &nbsp; 行无疆</span><br></p><p style="text-align: center;"><span style="color:#d84fa9"><span style="line-height: 38.4px; font-size: 18px;"><br></span></span></p>
+			</div>
 		</div>
 		<a href="javascript:void(0)" class="vnclose close"></a>
 		<!-- JiaThis Button BEGIN -->
