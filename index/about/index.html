@@ -238,8 +238,36 @@
 	    </div>
     </div>
 
+<div class="boxbox" style="display: none;"></div>
+<div class="manage" style="padding-top: 10px;">
+    
+    <ul class="mangbox" style="padding-top: 10px;">
 
+	    <li data-url="02.html">
+            <div class="center">
+                <div class="list-left">
+                    <div class="data">2016年12月02日</div>
+                    <span>苏州圆启环保科技有限公司宣传片</span>
+                    <a href="javascript:void(0)">more</a>
+                </div>
+                                <a href="javascript:void(0)"><img src="../../image/news_02_thumb.jpg" alt="" width="281" height="102" class="txt1"></a>
+                            </div>
+        </li>
 
+	    <li data-url="01.html">
+		    <div class="center">
+			    <div class="list-left">
+				    <div class="data">2016年12月01日</div>
+				    <span>创致节油王——您身边的节油专家代码</span>
+				    <a href="javascript:void(0)">more</a>
+			    </div>
+			    <a href="javascript:void(0)"><img src="../../image/news_01_thumb.jpg" alt="" width="281" height="102" class="txt1"></a>
+		    </div>
+	    </li>
+                
+                
+    </ul>
+</div>
 
     <div class="footer clearfix">
         <div class="f-se w1000">
@@ -254,7 +282,12 @@
 
     <script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
-
+$(".mangbox li").bind("click",function(){
+	var dom=$(".boxbox");
+    var id=$(this).data("url");
+    dom.load(id).fadeIn();
+	dom.data("top",$(this).index())
+})
 		index()
 		profilescroll();
         window.onload=function(){
@@ -274,6 +307,7 @@
             profilescroll();
 			culscroll();
 			jm();
+            news();
         })
 //		var qs = (function() {
 //			var argName, args, pair, pairs, pos, query, value, _i, _len;
