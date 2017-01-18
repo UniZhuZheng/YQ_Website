@@ -1,0 +1,446 @@
+<style>
+
+
+.rich_media_inner {
+    font-size: 16px;
+    hyphens: auto;
+    overflow-wrap: break-word;
+}
+.rich_media_area_primary {
+    background-color: #fff;
+    padding: 20px 15px 15px;
+    position: relative;
+}
+.rich_media_area_primary::before {
+    border-top: 1px solid #e5e5e5;
+    bottom: -2px;
+    content: " ";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: auto;
+    transform: scaleY(0.5);
+    transform-origin: 0 0 0;
+    width: 100%;
+}
+.rich_media_area_primary .original_img_wrp {
+    display: inline-block;
+    font-size: 0;
+}
+.rich_media_area_primary .original_img_wrp .tips_global {
+    display: block;
+    font-size: 14px;
+    margin-top: 0.5em;
+    overflow: hidden;
+    overflow-wrap: normal;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: auto;
+}
+.rich_media_area_extra {
+    padding: 0 15px;
+}
+.rich_media_title {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+.rich_media_meta_list {
+    font-size: 0;
+    line-height: 20px;
+    margin-bottom: 18px;
+}
+.rich_media_meta_list em {
+    font-style: normal;
+}
+.rich_media_meta {
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+.meta_original_tag {
+    border: 1px solid #9e9e9e;
+    border-radius: 20% / 50%;
+    color: #8c8c8c;
+    display: inline-block;
+    font-size: 15px;
+    line-height: 1.1;
+    padding: 1px 0.5em;
+    vertical-align: middle;
+}
+.meta_enterprise_tag img {
+    border: 0 none;
+    display: block;
+    height: 30px !important;
+    margin-top: -3px;
+    position: relative;
+    width: 30px;
+}
+.rich_media_meta_text {
+    color: #8c8c8c;
+}
+span.rich_media_meta_nickname {
+    display: none;
+}
+.rich_media_thumb_wrp {
+    margin-bottom: 6px;
+}
+.rich_media_thumb_wrp .original_img_wrp {
+    display: block;
+}
+.rich_media_thumb {
+    display: block;
+    width: 100%;
+}
+.rich_media_content {
+    color: #3e3e3e;
+    overflow: hidden;
+}
+.rich_media_content * {
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+}
+.rich_media_content p {
+    clear: both;
+    min-height: 1em;
+}
+.rich_media_content em {
+    font-style: italic;
+}
+.rich_media_content fieldset {
+    min-width: 0;
+}
+.rich_media_content .list-paddingleft-2 {
+    padding-left: 30px;
+}
+.rich_media_content blockquote {
+    border-left: 3px solid #dbdbdb;
+    margin: 0;
+    padding-left: 10px;
+}
+img {
+    height: auto !important;
+}
+@media not all {
+.mm_appmsg .rich_media_inner, .mm_appmsg .rich_media_meta, .mm_appmsg .discuss_list, .mm_appmsg .rich_media_extra, .mm_appmsg .title_tips .tips {
+    font-size: 17px;
+}
+.mm_appmsg .meta_original_tag {
+    font-size: 15px;
+}
+}
+@media not all {
+.mm_appmsg .rich_media_title {
+    font-size: 25px;
+}
+}
+@media screen and (min-width: 1024px) {
+.rich_media {
+    margin-left: auto;
+    margin-right: auto;
+    width: 740px;
+}
+.rich_media_inner {
+    padding: 20px;
+}
+body {
+    background-color: #fff;
+}
+}
+@media screen and (min-width: 1025px) {
+body {
+    font-family: "Helvetica Neue",Helvetica,"Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+}
+.rich_media {
+    position: relative;
+}
+.rich_media_inner {
+    background-color: #fff;
+    padding-bottom: 100px;
+}
+}
+.radius_avatar {
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    overflow: hidden;
+    padding: 3px;
+    vertical-align: middle;
+}
+.radius_avatar img {
+    background-color: #eee;
+    border-radius: 50%;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+.cell {
+    display: block;
+    padding: 0.8em 0;
+    position: relative;
+}
+.cell_hd, .cell_bd, .cell_ft {
+    display: table-cell;
+    overflow-wrap: break-word;
+    vertical-align: middle;
+    white-space: nowrap;
+    word-break: break-all;
+}
+.cell_primary {
+    white-space: normal;
+    width: 2000px;
+}
+.flex_cell {
+    -moz-box-align: center;
+    align-items: center;
+    display: flex;
+    padding: 10px 0;
+}
+.flex_cell_primary {
+    -moz-box-flex: 1;
+    flex: 1 1 0;
+    width: 100%;
+}
+.original_tool_area {
+    border: 1px solid #eaeaea;
+    color: #3e3e3e;
+    display: block;
+    margin: 20px 0;
+    padding: 0.75em 1em 0;
+}
+.original_tool_area .tips_global {
+    font-size: 15px;
+    padding-bottom: 0.5em;
+    position: relative;
+}
+.original_tool_area .tips_global::after {
+    border-bottom: 1px solid #dbdbdb;
+    bottom: 0;
+    content: " ";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transform: scaleY(0.5);
+    transform-origin: 0 100% 0;
+}
+.original_tool_area .radius_avatar {
+    height: 27px;
+    margin-right: 0.5em;
+    padding: 0;
+    width: 27px;
+}
+.original_tool_area .radius_avatar img {
+    height: 100% !important;
+}
+.original_tool_area .flex_cell_bd {
+    overflow: hidden;
+    overflow-wrap: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: auto;
+}
+.original_tool_area .flex_cell_ft {
+    color: #8c8c8c;
+    font-size: 14px;
+    padding-left: 1em;
+    white-space: nowrap;
+}
+.original_tool_area .icon_access::after {
+    border-color: #cbcad0;
+    border-style: solid;
+    border-width: 1px 1px 0 0;
+    content: " ";
+    display: inline-block;
+    height: 8px;
+    position: relative;
+    top: -1px;
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    width: 8px;
+}
+.weui_loading {
+    animation: 1s steps(12, end) 0s normal none infinite running weuiLoading;
+    background: transparent url("data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iciIgd2lkdGg9JzEyMHB4JyBoZWlnaHQ9JzEyMHB4JyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICAgIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSJub25lIiBjbGFzcz0iYmsiPjwvcmVjdD4KICAgIDxyZWN0IHg9JzQ2LjUnIHk9JzQwJyB3aWR0aD0nNycgaGVpZ2h0PScyMCcgcng9JzUnIHJ5PSc1JyBmaWxsPScjRTlFOUU5JwogICAgICAgICAgdHJhbnNmb3JtPSdyb3RhdGUoMCA1MCA1MCkgdHJhbnNsYXRlKDAgLTMwKSc+CiAgICA8L3JlY3Q+CiAgICA8cmVjdCB4PSc0Ni41JyB5PSc0MCcgd2lkdGg9JzcnIGhlaWdodD0nMjAnIHJ4PSc1JyByeT0nNScgZmlsbD0nIzk4OTY5NycKICAgICAgICAgIHRyYW5zZm9ybT0ncm90YXRlKDMwIDUwIDUwKSB0cmFuc2xhdGUoMCAtMzApJz4KICAgICAgICAgICAgICAgICByZXBlYXRDb3VudD0naW5kZWZpbml0ZScvPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyM5Qjk5OUEnCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSg2MCA1MCA1MCkgdHJhbnNsYXRlKDAgLTMwKSc+CiAgICAgICAgICAgICAgICAgcmVwZWF0Q291bnQ9J2luZGVmaW5pdGUnLz4KICAgIDwvcmVjdD4KICAgIDxyZWN0IHg9JzQ2LjUnIHk9JzQwJyB3aWR0aD0nNycgaGVpZ2h0PScyMCcgcng9JzUnIHJ5PSc1JyBmaWxsPScjQTNBMUEyJwogICAgICAgICAgdHJhbnNmb3JtPSdyb3RhdGUoOTAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyNBQkE5QUEnCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSgxMjAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyNCMkIyQjInCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSgxNTAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyNCQUI4QjknCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSgxODAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyNDMkMwQzEnCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSgyMTAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyNDQkNCQ0InCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSgyNDAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyNEMkQyRDInCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSgyNzAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyNEQURBREEnCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSgzMDAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyNFMkUyRTInCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSgzMzAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0Pgo8L3N2Zz4=") no-repeat scroll 0 0 / 100% auto;
+    display: inline-block;
+    height: 20px;
+    vertical-align: middle;
+    width: 20px;
+}
+@keyframes weuiLoading {
+0% {
+    transform: rotate3d(0, 0, 1, 0deg);
+}
+100% {
+    transform: rotate3d(0, 0, 1, 360deg);
+}
+}
+@keyframes weuiLoading {
+0% {
+    transform: rotate3d(0, 0, 1, 0deg);
+}
+100% {
+    transform: rotate3d(0, 0, 1, 360deg);
+}
+}
+.gif_img_wrp {
+    display: inline-block;
+    font-size: 0;
+    font-style: normal;
+    font-weight: 400;
+    position: relative;
+    text-indent: 0;
+}
+.gif_img_wrp img {
+    vertical-align: top;
+}
+.gif_img_tips {
+    background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0 !important;
+    border-radius: 1.2em / 50%;
+    bottom: 10px;
+    color: #fff;
+    font-size: 11px;
+    left: 10px;
+    line-height: 2.3;
+    min-width: 65px;
+    position: absolute;
+    text-align: center;
+}
+.gif_img_tips.loading {
+    min-width: 75px;
+}
+.gif_img_tips i {
+    margin: -0.2em 0.73em 0 -2px;
+    vertical-align: middle;
+}
+.gif_img_play_arrow {
+    border-color: transparent transparent transparent #fff;
+    border-style: dashed dashed dashed solid;
+    border-width: 5px 0 5px 8px;
+    display: inline-block;
+    height: 0;
+    width: 0;
+}
+.gif_img_loading {
+    height: 14px;
+    width: 14px;
+}
+i.gif_img_loading {
+    margin-left: -4px;
+}
+.gif_bg_tips_wrp {
+    height: 0;
+    line-height: 0;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.gif_bg_tips_wrp .gif_img_tips_group {
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 9999;
+}
+.gif_bg_tips_wrp .gif_img_tips_group .gif_img_tips {
+    bottom: auto;
+    left: 0;
+    top: 0;
+}
+.rich_media_global_msg {
+    background-color: #c6e0f8;
+    color: #8c8c8c;
+    font-size: 13px;
+    left: 0;
+    padding: 1em 35px 1em 15px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+.rich_media_global_msg .icon_closed {
+    background: transparent url("/mmbizwap/zh_CN/htmledition/images/icon/appmsg/icon_appmsg_msg_closed_sprite.2x.png") no-repeat scroll 0 0 / 100% auto;
+    display: inline-block;
+    height: 11px;
+    line-height: 300px;
+    margin-top: -5px;
+    overflow: hidden;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    vertical-align: middle;
+    width: 11px;
+}
+.rich_media_global_msg .icon_closed:active {
+    background-position: 0 -17px;
+}
+.preview_appmsg .rich_media_title {
+    margin-top: 1.9em;
+}
+@media screen and (min-width: 1024px) {
+.rich_media_global_msg {
+    margin: 0 20px;
+    position: relative;
+}
+.preview_appmsg .rich_media_title {
+    margin-top: 0;
+}
+}
+
+
+.showlist1{
+    position: fixed;
+    left:460px;
+    background: #fff;
+    width:883px;
+	height:600px!important;
+	min-height:300px;
+    padding-left: 57px;
+    top: 50%;
+    margin-top: -300px;
+    left:50%;
+	padding-bottom:50px;
+    margin-left: -440px;
+}
+.showlist1 .zz{
+    color:#333333;
+    line-height: 12px;
+    height:12px;
+    display: block;
+    margin: 15px 0px 30px 0px;
+    text-indent: 3px;
+}
+
+
+</style>
+<div class="clear-black" ></div>
+<div class="clear-box" style="top:0px;">
+	<div class="showlist1 picness">
+		<div class="list-listl">
+			<div class="newhome-tit">出租车节油行动</div>
+			<span class="zz">2017/01/11</span>
+			<div class="rich_media_content " id="js_content">
+				<section style="margin-top: 10px; margin-bottom: 10px; text-align: center;"><section style="margin:10px auto;"><section class="wx96Diy cur" data-source="bj.96weixin.com"><section style="margin:10px auto;"><p><span style="font-size:16px;font-weight:800;"></span></p><p><span style="font-size:16px;font-weight:800;"></span></p><section class="wx96Diy" data-source="bj.96weixin.com"><section class="wx96Diy" data-source="bj.96weixin.com" style="text-align: left;"><p style="margin-top: 10px; margin-bottom: 10px; text-align: left; width: 100%; box-sizing: border-box; text-indent: 2em;"><br  /></p><section style="display:inline-block;transform: skew(-30deg);-webkit-transform: skew(-30deg);-moz-transform: skew(-30deg);-ms-transform: skew(-30deg);-o-transform: skew(-30deg);"><section class="96wx-bgc" style="display: inline-block; width: 2px; height: 30px; opacity: 0.15; color: rgb(255, 255, 255); box-sizing: border-box; background: rgb(255, 0, 0);"></section><section class="96wx-bgc" style="display: inline-block; width: 4px; height: 30px; margin-left: 6px; opacity: 0.35; color: rgb(255, 255, 255); box-sizing: border-box; background: rgb(255, 0, 0);"></section><section class="96wx-bgc" style="display: inline-block; width: 6px; height: 30px; margin-left: 6px; opacity: 0.55; color: rgb(255, 255, 255); box-sizing: border-box; background: rgb(255, 0, 0);"></section><section class="96wx-bgc" style="display: inline-block; width: 8px; height: 30px; margin-left: 6px; color: rgb(255, 255, 255); box-sizing: border-box; background: rgb(255, 0, 0);"></section></section><section style="display:inline-block;vertical-align: top;transform: skew(-30deg);-webkit-transform: skew(-30deg);-moz-transform: skew(-30deg);-ms-transform: skew(-30deg);-o-transform: skew(-30deg);"><section class="96wx-bgc" style="display: inline-block; height: 30px; line-height: 30px; margin-left: 6px; padding-right: 20px; padding-left: 20px; vertical-align: top; color: rgb(255, 255, 255); box-sizing: border-box; background: rgb(255, 0, 0);"><section style=";transform: skew(30deg);-webkit-transform: skew(30deg);-moz-transform: skew(30deg);-ms-transform: skew(30deg);-o-transform: skew(30deg);"><p style="white-space: normal; font-size: 18px;">节油行动</p></section></section></section><section style="display:inline-block;transform: skew(-30deg);-webkit-transform: skew(-30deg);-moz-transform: skew(-30deg);-ms-transform: skew(-30deg);-o-transform: skew(-30deg);"><section class="96wx-bgc" style="display: inline-block; width: 8px; height: 30px; margin-left: 6px; color: rgb(255, 255, 255); box-sizing: border-box; background: rgb(255, 0, 0);"></section><section class="96wx-bgc" style="display: inline-block; width: 6px; height: 30px; margin-left: 6px; opacity: 0.55; color: rgb(255, 255, 255); box-sizing: border-box; background: rgb(255, 0, 0);"></section><section class="96wx-bgc" style="display: inline-block; width: 4px; height: 30px; margin-left: 6px; opacity: 0.35; color: rgb(255, 255, 255); box-sizing: border-box; background: rgb(255, 0, 0);"></section><section class="96wx-bgc" style="display: inline-block; width: 2px; height: 30px; opacity: 0.15; margin-left: 6px; color: rgb(255, 255, 255); box-sizing: border-box; background: rgb(255, 0, 0);"></section></section><p><br  /></p><p><img  width="162" height="154" class="" src="../../image/news_04_01.jpg" style="line-height: 1.6; text-align: left; text-indent: 2em; font-size: 16px; font-weight: 800; width: 162px; height: 154px;"  /><span style="line-height: 1.6; text-align: left; text-indent: 2em; font-size: 16px; font-weight: 800;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span><img src="../../image/news_04_02.png" width="240" height="147" class="" style="line-height: 1.6; text-align: left; text-indent: 2em; font-size: 16px; font-weight: 800; width: 240px; height: 147px;"  /><img src="../../image/news_04_03.jpg" class="" style="line-height: 1.6; text-align: left; text-indent: 2em; font-size: 16px; font-weight: 800;"  /></p></section></section></section><p><br  /></p><section class="wx96Diy" data-source="bj.96weixin.com"><section style="margin:10px auto;"><p style="color: rgb(255, 0, 0); text-indent: 2em; text-align: left;"><span style="font-size:16px;font-weight:800;">活动规则：</span></p><section style="border-color: transparent transparent rgb(255, 0, 0); border-style: solid; border-width: 0px 10px 10px; height: 0px; margin-left: 30px; width: 0px;" class="96wx-bdbc"></section><section style="margin-top: -1px; line-height: 22px; border: 1px solid rgb(255, 0, 0); border-radius: 2px; clear: both;" class="96wx-bdc"><section style="border-color: transparent transparent rgb(254, 254, 254); border-style: solid; border-width: 10px; height: 0px; margin-top: -19px; margin-left: 29px; width: 0px; transform: rotateZ(0deg);"></section><section style="padding: 10px;"><p style="text-align: left; text-indent: 2em; line-height: 2em;"><span style="font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">第一步： 关注创致爱车公众号，发送截图给创致小助手</span></p><p style="text-align: left; text-indent: 2em; line-height: 2em;"><span style="font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">第二步： 将您的出租车或滴滴证照拍个照，发送截图给创致小助手</span></p><p style="text-align: left; text-indent: 2em; line-height: 2em;"><strong><span style="text-decoration:underline;"><span style="font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:red">完成以上两步，直接甩地址，创致小助手给您免费寄送2袋分享装节油王（2瓶/袋）</span></span></strong></p><p style="text-align: left; text-indent: 2em; line-height: 2em;"><span style="font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;">第三步： 把创致小助手拉进50人以上 出租车/滴滴驾驶员 群</span></p><p style="text-align: left; text-indent: 2em; line-height: 2em;"><strong><span style="text-decoration:underline;"><span style="font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;;color:red">完成以上三步，直接甩地址，创致小助手给您免费寄送1盒节油王（10瓶/盒）</span></span></strong></p><p style="text-align: left; text-indent: 2em; line-height: 2em;"><strong><span style="text-decoration: underline; color: rgb(0, 0, 0);">创致小助手 &nbsp;微信号：185-5008-7611</span></strong><br  /></p></section></section></section></section><section class="wx96Diy" data-source="bj.96weixin.com"><section style="margin: 10px auto;"><section style="display: inline-block;clear: both;"></section><section style="margin: -1px 4px; padding: 0.8em; border: 1px solid rgb(255, 0, 0); box-sizing: border-box; box-shadow: rgb(117, 117, 117) 0px 0px 4px; color: inherit;" class="96wx-bdc"><section style="color: rgb(51, 51, 51); font-size: 1em; line-height: 1.4; word-break: break-all; word-wrap: break-word;"><p style="text-indent: 2em; text-align: left;"><span style="text-indent: 2em; font-size: 1em; line-height: 1.4;">咨询电话：</span><span style="text-indent: 2em; font-size: 1em; line-height: 1.4;">400-9953-008</span><br  /></p></section></section><section style="height: 6px;box-sizing: border-box;"><section style="height: 100%; width: 6px; float: left; border-bottom-width: 2px; border-bottom-style: solid; border-color: rgb(255, 0, 0); border-left-width: 2px; border-left-style: solid; box-sizing: border-box;" class="96wx-bdc"></section><section style="height: 100%; width: 6px; float: right; border-bottom-width: 2px; border-bottom-style: solid; border-color: rgb(255, 0, 0); border-right-width: 2px; border-right-style: solid; box-sizing: border-box;" class="96wx-bdc"></section></section></section></section><section class="wx96Diy" data-source="bj.96weixin.com"><section style="border-style: none; width: 296px; clear: both; overflow: hidden; margin-right: auto; margin-left: auto;"><img data-s="300,640" data-type="png" data-src="http://mmbiz.qpic.cn/mmbiz_png/m02NRibBlp2K30aDXtw2JfWpZiagCuXkJ8oUBwjldj53Q7eCTfowt29tQFia9wzib48TK7f6bNUWAib9PAibcuHDfPrA/0?wx_fmt=png" data-ratio="0.4322469982847341" data-w="583"  /><br  /></section></section><p style="text-align: center;"><br  /></p><p><br  /></p><p><br  /></p></section></section></section><p><br  /></p>
+			</div>
+		</div>
+		<a href="javascript:void(0)" class="vnclose close"></a>
+		<!-- JiaThis Button BEGIN -->
+
+		<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+	</div>
+</div>
+<script>
+	/*var uns=$(".boxbox").data("top");
+	 $(".showlist").css(
+	 "top",756+uns*100+"px"
+	 )
+	 console.log($(".mangbox li").eq(uns).offset().top-$(this).height()+"px")*/
+	$(".close").bind("mousedown",function(){
+		$(".boxbox").fadeOut()
+	})
+
+
+</script>
