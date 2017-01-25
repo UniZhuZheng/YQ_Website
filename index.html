@@ -247,6 +247,50 @@
 	    </div>
     </div>
 
+    <div class="pro-fi" style="padding-top: 100px;">
+        <div class="intoentit"><img src="./static/web/img/honor_E7A774CF.png" alt="Honor Qualifications" width="500" height="34"></div>
+        <div class="intocntit">荣誉资质</div>
+    </div>
+    <div class="honor" style="padding-top: 30px;">
+        <div class="w1000">
+            <div class="honor-box" id="box">
+                <ul>
+                    <li>
+                        <img src="./image/jd_7.jpg" alt="" class="img" onclick="if ($(this).parent().css('z-index') == 3) window.open('./image/jd_7.jpg')">
+                        <p><img src="./image/honor_05.png"></p>
+                    </li>
+                    <li>
+                        <img src="./image/jd_1.jpg" alt="" class="img" onclick="if ($(this).parent().css('z-index') == 3) window.open('./image/jd_1.jpg')">
+                        <p><img src="./image/honor_05.png"></p>
+                    </li>
+                    <li>
+                        <img src="./image/jd_2.jpg" alt="" class="img" onclick="if ($(this).parent().css('z-index') == 3) window.open('./image/jd_2.jpg')">
+                        <p><img src="./image/honor_05.png"></p>
+                    </li>
+                    <li>
+                        <img src="./image/jd_3.jpg" alt="" class="img" onclick="if ($(this).parent().css('z-index') == 3) window.open('./image/jd_3.jpg')">
+                        <p><img src="./image/honor_05.png"></p>
+                    </li>
+                    <li>
+                        <img src="./image/jd_4.jpg" alt="" class="img" onclick="if ($(this).parent().css('z-index') == 3) window.open('./image/jd_4.jpg')">
+                        <p><img src="./image/honor_05.png"></p>
+                    </li>
+                    <li>
+                        <img src="./image/jd_5.jpg" alt="" class="img" onclick="if ($(this).parent().css('z-index') == 3) window.open('./image/jd_5.jpg')">
+                        <p><img src="./image/honor_05.png"></p>
+                    </li>
+                    <li>
+                        <img src="./image/jd_6.jpg" alt="" class="img" onclick="if ($(this).parent().css('z-index') == 3) window.open('./image/jd_6.jpg')">
+                        <p><img src="./image/honor_05.png"></p>
+                    </li>
+
+                </ul>
+                <pre class="prev"></pre>
+                <pre class="next"></pre>
+            </div>
+        </div>
+    </div>
+
     <div class="footer clearfix" style="margin-top: 40px">
 		<div class="f-se w1000">
 			<div class="le">
@@ -258,6 +302,7 @@
 
 <script src="./js/main.js" type="text/javascript" charset="utf-8"></script>
 <script src="./js/banner.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./static/web/js/jquery.ZoomPic_E7A774CF.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 //	$(".ri").eq(1).find("img").css({
 //		width:"130px",
@@ -290,9 +335,11 @@
     })
    index()
     profilescroll();
+honor();
 
     $(window).scroll(function(){
         profilescroll();
+        honor();
     })
     $(".leimg").hover(function(){
         $(this).find("img").animate({
