@@ -1,0 +1,40 @@
+.reg-content table td.regfir input.error{
+	 border: 1px solid #D70128;
+}
+.login-form table td.loginfir input.error{
+	 border: 1px solid #D70128;
+}
+.buy-wrap .delivery .tex.error{
+	 border: 1px solid #D70128;
+}
+.shop-wrap .fr .delivery .tex.error{
+	 border: 1px solid #D70128;
+}
+input.error{
+	 border: 1px solid #D70128;
+}
+/* pager style */
+.page{
+	padding:10px 0;
+	font-size:12px;
+	font-weight:bold;
+	line-height:22px;
+	text-align:center;
+	clear:both;}
+.page a{
+	text-decoration:none;
+	color:#8698b6;
+	background:#fff;
+	border:1px solid #CCCCCC;
+	padding:3px 6px;
+	padding-bottom:2px;
+	margin-right:3px}
+.page a.active{
+	background:#8b8b8b;
+	border:1px solid #8b8b8b;
+	color:#fff}
+.page a:hover{
+	text-decoration:none;
+	color:#fff;
+	background:#8b8b8b;
+	border:1px solid #8b8b8b}
